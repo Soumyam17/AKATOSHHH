@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AKATOSH - Belt Conveyor Interface</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    background-image: url('https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-4.0.1&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+  }
+
+  /* Overlay to make text more readable over background */
+  body::before {
+    content: "";
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(255,255,255,0.6);
+    z-index: -1;
+  }
+
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #016B61;
+  }
+  header h1 {
+    margin: 0;
+    color: #fff;
+  }
+  /* Profile section */
+  .profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-right: 10px;
+  }
+  /* Navigation styles */
+  nav {
+    background-color: #70B2B2;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  nav li {
+    position: relative;
+  }
+  nav a {
+    display: block;
+    padding: 14px 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  nav a:hover {
+    background-color: #9ca45a;
+  }
+  /* Dropdown menu */
+  nav li:hover > ul {
+    display: block;
+  }
+  nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #396266;
+    min-width: 200px;
+    z-index: 1000;
+  }
+  nav ul ul li {
+    width: 100%;
+  }
+
+  /* Main content styles */
+  main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background: rgba(255,255,255,0.8);
+    border-radius: 8px;
+  }
+  section {
+    margin-bottom: 40px;
+  }
+  h2 {
+    color:#016B61;
+    border-bottom: 2px solid #016B61;
+    padding-bottom: 10px;
+  }
+  /* Conveyor images in content */
+  .conveyor-img {
+    display: block;
+    margin: 15px auto;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  /* Footer styles */
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #016B61;
+    color: #fff;
+    margin-top: 40px;
+  }
+  /* Responsive adjustments */
+  @media(max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+    }
+    nav ul ul {
+      position: static;
+    }
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header with title and profile logo -->
+<header>
+  <h1>AKATOSH</h1>
+  <div class="profile" title="Sign In">
+    <img src="https://i.pinimg.com/736x/c4/b7/5f/c4b75fb439096e44deb4d1e98480fa31.jpg" alt="Profile Logo" />
+  </div>
+</header>
+
+<!-- Navigation menu -->
+<nav>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li>
+      <a href="#features">Features</a>
+      <ul>
+        <li><a href="#durability">Durability</a></li>
+        <li><a href="#capacity">Capacity</a></li>
+        <li><a href="#speed">Speed</a></li>
+      </ul>
+    </li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Main content -->
+<main>
+  <section id="overview">
+    <h2>BELT CONVEYOR</h2>
+    <p>Welcome to AKATOSH! Discover our premium belt conveyor systems designed for efficiency and durability across industries. Looking for a reliable Belt Conveyor solution? Our high-performance belt conveyors are designed for smooth material handling, increased productivity, and long-lasting durability. Customizable to your production line needs, they deliver efficiency and cost savings you can count on. Get your belt conveyor today and streamline your workflow.</p>
+  </section>
+
+  <section id="features">
+    <h2>Features</h2>
+    <ul>
+      <li>Heavy-duty construction</li>
+      <li>Customizable lengths and widths</li>
+      <li>Energy-efficient motors</li>
+      <li>Easy to install and maintain</li>
+    </ul>
+  </section>
+
+  <section id="products">
+    <h2>Our Belt Conveyor Products</h2>
+    <h3>Single Belt Conveyor</h3>
+    <img src="https://images.squarespace-cdn.com/content/v1/5d0759775c67710001e33eb3/1664362922039-NK74IPAEV8BNL44652KN/Belt+Conveyor" alt="Single Belt Conveyor" class="conveyor-img" />
+    <h3>Twin Belt Conveyor</h3>
+    <img src="https://5.imimg.com/data5/SELLER/Default/2022/6/QM/ER/CY/110233236/compact-belt-conveyor-500x500.jpg" alt="Twin Belt Conveyor" class="conveyor-img" />
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out for more information or inquiries:</p>
+    <ul>
+      <li>Email: info@akatosh.com</li>
+      <li>Phone: +0661-2645579</li>
+      <li>Address: Rourkela, Steel City</li>
+    </ul>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 AKATOSH. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
