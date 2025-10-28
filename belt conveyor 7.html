@@ -3,7 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AKATOSH - Belt Conveyor Interface</title>
+<title>AKATOSH - Belt Conveyor Solutions</title>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<!-- Animate.css for animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <style>
   body {
     margin: 0;
@@ -14,8 +18,6 @@
     background-position: center;
     color: #333;
   }
-
-  /* Overlay to make text more readable over background */
   body::before {
     content: "";
     position: fixed;
@@ -36,10 +38,8 @@
     margin: 0;
     color: #fff;
   }
-  /* Profile section */
+  /* Profile icon */
   .profile {
-    display: flex;
-    align-items: center;
     cursor: pointer;
   }
   .profile img {
@@ -47,8 +47,8 @@
     height: 50px;
     border-radius: 50%;
     border: 2px solid #fff;
-    margin-right: 10px;
   }
+
   /* Navigation styles */
   nav {
     background-color: #70B2B2;
@@ -72,7 +72,7 @@
   nav a:hover {
     background-color: #9ca45a;
   }
-  /* Dropdown menu */
+  /* Dropdown submenu */
   nav li:hover > ul {
     display: block;
   }
@@ -84,9 +84,6 @@
     background-color: #396266;
     min-width: 200px;
     z-index: 1000;
-  }
-  nav ul ul li {
-    width: 100%;
   }
 
   /* Main content styles */
@@ -101,11 +98,17 @@
     margin-bottom: 40px;
   }
   h2 {
-    color:#016B61;
+    color: #016B61;
     border-bottom: 2px solid #016B61;
     padding-bottom: 10px;
   }
-  /* Conveyor images in content */
+  h3 {
+    margin-top: 20px;
+    color: #014d4d;
+  }
+  p {
+    line-height: 1.5;
+  }
   .conveyor-img {
     display: block;
     margin: 15px auto;
@@ -114,6 +117,30 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
+
+  /* Contact form styles */
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  #contact-form input, #contact-form textarea {
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  #contact-form button {
+    background-color: #016B61;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #contact-form button:hover {
+    background-color: #014d4d;
+  }
+
   /* Footer styles */
   footer {
     text-align: center;
@@ -122,35 +149,87 @@
     color: #fff;
     margin-top: 40px;
   }
-  /* Responsive adjustments */
-  @media(max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-    }
-    nav ul ul {
-      position: static;
-    }
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+
+  /* Popup overlay styles */
+  .popupOverlay {
+    display: none;
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+  }
+  /* Popup modal styles */
+ .popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .popup h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+  .popup input, .popup textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  .popup button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #016B61;
+    color: #fff;
+  }
+  .popup button:hover {
+    background-color: #014d4d;
+  }
+  .closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
   }
 </style>
 </head>
 <body>
 
-<!-- Header with title and profile logo -->
+<!-- Header -->
 <header>
-  <h1>AKATOSH</h1>
-  <div class="profile" title="Sign In">
+  <h1 class="animate__animated animate__fadeInDown">AKATOSH</h1>
+  <div class="profile" id="profileIcon" title="Sign In / Sign Up">
     <img src="https://i.pinimg.com/736x/c4/b7/5f/c4b75fb439096e44deb4d1e98480fa31.jpg" alt="Profile Logo" />
   </div>
 </header>
 
-<!-- Navigation menu -->
+<!-- Navigation -->
 <nav>
   <ul>
-    <li><a href="#overview">Overview</a></li>
+    <li>
+        <a href="#System">System</a>
+        <ul>
+            <li><a href="#aerial (vertical) conveyor system">Aerial (vertical) Conveyor System</a></li>
+            <li><a href="#horizontal circulate conveyor system">Horizontal Circulate Conveyor System</a></li>
+            <li><a href="#multi-level conveyor system">Multi-Level Conveyor System</a></li>
+            <li><a href="#side-by-side conveying system">Side-by-Side Conveying System</a></li>
+        </ul>
+    </li> 
+
     <li>
       <a href="#features">Features</a>
       <ul>
@@ -159,51 +238,183 @@
         <li><a href="#speed">Speed</a></li>
       </ul>
     </li>
-    <li><a href="#products">Products</a></li>
+    <li><a href="#products">Products</a>
+        <ul>
+         <li><a href="#baffle customized">Baffle Customized</a></li>
+         <li><a href="#built-in motor">Built-in Motor</a></li>
+         <li><a href="#single belt conveyor">Single Belt Conveyor</a></li>
+         <li><a href="#twin belt conveyor">Twin Belt Conveyor</a></li>
+         <li><a href="#Visual Backlight">Visual Backlight</a></li>
+      </ul> 
+    </li>
+
+    <li><a href="#applications">Applications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- Main content -->
+<!-- Main Content -->
 <main>
-  <section id="overview">
-    <h2>BELT CONVEYOR</h2>
-    <p>Welcome to AKATOSH! Discover our premium belt conveyor systems designed for efficiency and durability across industries. Looking for a reliable Belt Conveyor solution? Our high-performance belt conveyors are designed for smooth material handling, increased productivity, and long-lasting durability. Customizable to your production line needs, they deliver efficiency and cost savings you can count on. Get your belt conveyor today and streamline your workflow.</p>
-  </section>
-
-  <section id="features">
-    <h2>Features</h2>
+  <!-- Detailed Overview -->
+  <section id="overview" class="animate__animated animate__fadeInUp">
+    <h2>Project Overview</h2>
+    <p>Welcome to AKATOSH! We are dedicated to providing high-quality belt conveyor systems tailored for various industries. Our solutions are built for durability, efficiency, and ease of operation, helping you streamline your workflows and increase productivity. Whether you need conveyors for manufacturing, logistics, mining, or packaging, our customizable options ensure the perfect fit for your needs.</p>
+    <h3>Benefits of Our Belt Conveyors</h3>
     <ul>
-      <li>Heavy-duty construction</li>
-      <li>Customizable lengths and widths</li>
-      <li>Energy-efficient motors</li>
-      <li>Easy to install and maintain</li>
+      <li>Increase throughput and efficiency</li>
+      <li>Reduce manual handling and labor costs</li>
+      <li>Flexible design for different materials and environments</li>
+      <li>Low maintenance and long lifespan</li>
+      <li>Enhanced safety features</li>
     </ul>
   </section>
 
-  <section id="products">
+  <!-- Features -->
+  <section id="features" class="animate__animated animate__fadeInUp">
+    <h2>Features</h2>
+    <ul>
+      <li>Heavy-duty construction for long-lasting use</li>
+      <li>Wide range of customizable lengths and widths</li>
+      <li>Energy-efficient motors and drives</li>
+      <li>Easy installation, operation, and maintenance</li>
+      <li>Safety features for operator protection</li>
+    </ul>
+  </section>
+
+  <!-- Products with descriptions -->
+  <section id="products" class="animate__animated animate__fadeInUp">
     <h2>Our Belt Conveyor Products</h2>
     <h3>Single Belt Conveyor</h3>
     <img src="https://images.squarespace-cdn.com/content/v1/5d0759775c67710001e33eb3/1664362922039-NK74IPAEV8BNL44652KN/Belt+Conveyor" alt="Single Belt Conveyor" class="conveyor-img" />
+    <p>This conveyor is ideal for light to medium-duty applications, offering reliable performance for simple material handling processes.</p>
     <h3>Twin Belt Conveyor</h3>
     <img src="https://5.imimg.com/data5/SELLER/Default/2022/6/QM/ER/CY/110233236/compact-belt-conveyor-500x500.jpg" alt="Twin Belt Conveyor" class="conveyor-img" />
+    <p>Designed for higher capacity and more complex workflows, twin belt conveyors handle larger volumes efficiently and smoothly.</p>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Reach out for more information or inquiries:</p>
+  <!-- Applications -->
+  <section id="applications" class="animate__animated animate__fadeInUp">
+    <h2>Applications</h2>
     <ul>
-      <li>Email: info@akatosh.com</li>
-      <li>Phone: +0661-2645579</li>
-      <li>Address: Rourkela, Steel City</li>
+      <li>Manufacturing & Assembly Lines</li>
+      <li>Mining & Quarrying</li>
+      <li>Food Processing & Packaging</li>
+      <li>Logistics & Warehousing</li>
+      <li>Recycling & Waste Management</li>
     </ul>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="animate__animated animate__fadeInUp">
+    <h2>Contact Us</h2>
+    <p>Fill out the form below for inquiries or quotes:</p>
+    <form id="contact-form" onsubmit="return false;">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit" onclick="alert('Thank you! We will contact you soon.')">Send Message</button>
+    </form>
   </section>
 </main>
 
-<!-- Footer -->
+<!-- Footer with links -->
 <footer>
-  <p>&copy; 2025 AKATOSH. All rights reserved.</p>
+  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+    <a href="#overview" style="color:#fff; text-decoration:none;">Overview</a>
+    <a href="#features" style="color:#fff; text-decoration:none;">Features</a>
+    <a href="#products" style="color:#fff; text-decoration:none;">Products</a>
+    <a href="#applications" style="color:#fff; text-decoration:none;">Applications</a>
+    <a href="#contact" style="color:#fff; text-decoration:none;">Contact</a>
+  </div>
+  <p>&copy; 2024 AKATOSH. All rights reserved.</p>
 </footer>
 
+<!-- Popup Overlay -->
+<div class="popupOverlay" id="popupOverlay"></div>
+
+<!-- Sign In / Sign Up Popup Modal -->
+<div class="popup" id="authPopup">
+  <div class="closeBtn" id="closeAuth">&times;</div>
+  <h2 id="authTitle">Sign In</h2>
+  <input type="text" placeholder="Username" />
+  <input type="password" placeholder="Password" />
+  <button id="authButton">Login</button>
+  <p style="text-align:center; margin-top:10px; cursor:pointer; color:#006699;" id="switchAuth">
+    Don't have an account? Sign Up
+  </p>
+</div>
+
+<!-- Login Popup -->
+<div class="popup" id="loginPopup">
+  <div class="closeBtn" id="closeLogin">&times;</div>
+  <h2>Login</h2>
+  <input type="text" placeholder="Username" />
+  <input type="password" placeholder="Password" />
+  <button onclick="alert('Logged In!')">Log In</button>
+</div>
+
+<!-- Sign Up Popup -->
+<div class="popup" id="signupPopup">
+  <div class="closeBtn" id="closeSignup">&times;</div>
+  <h2>Sign Up</h2>
+  <input type="text" placeholder="Username" />
+  <input type="email" placeholder="Email" />
+  <input type="password" placeholder="Password" />
+  <button onclick="alert('Account Created!')">Sign Up</button>
+</div>
+
+<!-- Scripts -->
+<script>
+  const profileIcon = document.getElementById('profileIcon');
+  const overlay = document.getElementById('popupOverlay');
+  const authPopup = document.getElementById('authPopup');
+  const loginPopup = document.getElementById('loginPopup');
+  const signupPopup = document.getElementById('signupPopup');
+
+  // Show auth modal
+  profileIcon.onclick = () => {
+    showPopup(authPopup);
+  };
+
+  // Close buttons
+  document.getElementById('closeAuth').onclick = () => hidePopup(authPopup);
+  document.getElementById('closeLogin').onclick = () => hidePopup(loginPopup);
+  document.getElementById('closeSignup').onclick = () => hidePopup(signupPopup);
+
+  // Toggle Sign In / Sign Up
+  document.getElementById('switchAuth').onclick = () => {
+    const title = document.getElementById('authTitle');
+    const btn = document.getElementById('authButton');
+    if (title.innerText === 'Sign In') {
+      title.innerText = 'Sign Up';
+      btn.innerText = 'Sign Up';
+    } else {
+      title.innerText = 'Sign In';
+      btn.innerText = 'Login';
+    }
+  };
+
+  function showPopup(popup) {
+    popup.style.display = 'block';
+    overlay.style.display = 'block';
+    popup.classList.remove('animate__fadeOut');
+    popup.classList.add('animate__fadeIn');
+  }
+
+  function hidePopup(popup) {
+    popup.classList.remove('animate__fadeIn');
+    popup.classList.add('animate__fadeOut');
+    setTimeout(() => {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    }, 500);
+  }
+
+  document.getElementById('popupOverlay').onclick = () => {
+    document.querySelectorAll('.popup').forEach(p => {
+      if (p.style.display === 'block') hidePopup(p);
+    });
+  };
+</script>
 </body>
 </html>
